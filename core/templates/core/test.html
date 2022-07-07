@@ -1,0 +1,87 @@
+{%extends 'core/base.html'%}
+{%block contenido%}
+
+{% load static %}
+ <p>  
+  
+    <h3 class="red-text ayuda centro"> Productos para tus mascotas </h3>    
+</p>
+<p>
+  
+  <div id="carouselExampleIndicators" class="carousel slide m-4 middle-sm-4 middle-xs-4" data-bs-ride="carousel" >
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+        <div class="carousel-inner row">
+          <div class="carousel-item active col-xs-12" data-bs-interval="10000">
+            <a href="productos.html">
+            <img src="{% static 'core/img/productos.jpg' %}" class="d-md-block " id="tamano"></a>
+            <div class="carousel-caption d-none d-md-block">
+              <h3 class="black">Productos para tus mascotas</h3>
+              <h6 id="black"> </h6>
+            </div>
+          </div>
+          <div class="carousel-item col-md-4" data-bs-interval="2000" id="">
+            <a href="ayudanos.html">
+            <img src="{% static 'core/img/donar.jpg' %}"  class="d-block " id="tamano"></a>
+            <div class="carousel-caption d-none d-md-block" >
+              <h3  id="black">Ayuda a la fundacion con una donacion</h3>
+              <h6 id="black"> </h6>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+</p>
+<p>
+  <div class="mascota">
+    <div class="row">
+        <div class="col-xs-10 col-sm-6 col-md-4 mascota">
+            <div class="tarjeta">
+              <div class="face front">
+                <img src="{% static 'core/img/mascota/perro2.jpg' %}"   alt="perro numero 1" >
+                <h3>Mundo Perro</h3>
+              </div>
+              <a href="{% url 'productos' %}">
+              <div class="face back">
+               <h3>Aqui encontraras articulos para perros</h3></a>
+             </div>
+           </div>        
+          </div>
+          <div class="col-xs-10 col-sm-6 col-md-4 mascota">
+            <div class="tarjeta">
+              <div class="face front">
+                <img src="{% static 'core/img/mascota/gato2.jpg' %}" alt="gato numero 1" >
+                <h3>Mundo Gato</h3>
+              </div>
+              <a href="{% url 'productos' %}">
+              <div class="face back">
+               <h3>Aqui encontraras articulos para gatos</h3></a>
+             </div>
+           </div>        
+          </div>
+          <div class="col-xs-10 col-sm-6 col-md-4 mascota">
+            <div class="tarjeta">
+              <div class="face front">              
+                <img src="{% static 'core/img/mascota/vario.jpg' %}"  alt="vario numero 1" >             
+                <h3>Mundo Vario</h3>
+              </div>
+              <a href="{% url 'productos' %}">
+              <div class="face back">
+               <h3>Aqui encontraras articulos para todo tipo de animales</h3>
+              </a>
+             </div>
+           </div>        
+          </div>
+</p>
+</div></div>
+{%endblock%}
