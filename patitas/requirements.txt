@@ -1,0 +1,4 @@
+django-crispy-forms
+social-auth-app-django
+django-admin-interface
+django-allauth

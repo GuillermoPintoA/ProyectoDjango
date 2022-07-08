@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* css registro y login  */
+body{
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url(../img/fondo-animales.jpg);
+
+}
+.container{
+    width: 100%;
+    display: grid;
+    gap: 8px;
+    padding: 3.5em 1.5em;
+    
+}

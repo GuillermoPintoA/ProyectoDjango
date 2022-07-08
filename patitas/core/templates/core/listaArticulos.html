@@ -1,0 +1,38 @@
+</p>
+<P>
+      <div class="row mb-4">
+          <table class="table table-bordered" id="categorias">
+              <thead class="table-dark">
+                  <tr>
+                      <th scope="col">idArticulo</th>
+                      <th scope="col">Precio</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Opciones</th>
+                      <th scope="col"></th>
+                  </tr>                   
+                  <tr>
+          
+              {% for ar in articulos %}
+            <tr>
+                    <td>{{ar.idArticulo}}</td>
+                    <td>{{ar.precio}}</td>
+                    <td>{{ar.nombreProducto}}</td>
+
+
+
+                  </tr>
+              {% endfor %}
+
+
+                </tr>
+
+          </table>
+      </div>
+      <div class="row mb-3">
+          <a href="{% url 'form_articulo' %}">Ingresar Nuevo articulo</a>
+
+    </table>
+</div>
+<div class="row mb-3">
+
+</P>
