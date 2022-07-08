@@ -22,36 +22,40 @@
           <th scope="col">Nombre </th>
           <th scope="col">Marca </th>
           <th scope="col">Precio</th>
+          {% if perms.core.view_articulo %}
           <th scope="col">Opciones</th>
+          {% endif %}
         </tr>
       </thead>
 
 
-    {% for ar in articulos %}
+    {% for ar in entity %}
     <tr>
 
           <td>{{ar.id |title }} </td>          
           <td>{{ar.nombreProducto|capfirst }}</td>
           <td>{{ar.marca|capfirst}}</td>
           <td>${{ar.precio|intcomma}}</td>
-            {% if perms.app.add_modificar %}
+            {% if perms.core.change_articulo %}
            <td><a href="{%url 'modificar' ar.id %}" class="btn btn-success btn-sm">Modificar</a>
             {% endif %}
-            {% if perms.app.add_eliminar %}
+            {% if perms.core.delete_articulo %}
             <a href="{%url 'eliminar' ar.id %}" class="btn btn-danger btn-sm">Borrar</a>
             {% endif %}
         </tr>
-
-        
+   
 
       </div></div> </div>
                           {% endfor %}
                                 
                         </table>      
+                        <div>
+                          {% include 'core/Funciones/paginator' %}
+                        </div>
                     
 
   </p>
-  {% if perms.app.add_agregar %}
+  {% if perms.core.add_articulo %}
   <a href="{% url 'agregar' %}" class="btn btn-primary">agregar</a> 
   {% endif %}
  

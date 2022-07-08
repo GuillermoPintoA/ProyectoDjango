@@ -14,6 +14,7 @@
    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <header >
+  
     <div class="navbar navbar-expand-lg navbar-dark bg-colorm ">
         <div class="container">
           <a href="{% url 'test' %}" class="navbar-brand ">
@@ -60,8 +61,20 @@
 
             
             </ul>
+            {% if perms.core.view_articulo %}
+            <div class="dropdown">
+              <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                Opciones de Administrador
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                
+                <li><a class="dropdown-item" href="{% url 'listar' %}">Ver Lista</a></li>
+                {% endif %}
+                
+              </ul>
+            </div>
+
           </div>
-    
         </div>
       </div>
     </header>

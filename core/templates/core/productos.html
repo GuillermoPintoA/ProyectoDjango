@@ -36,10 +36,10 @@
                     
 
   </p>
-  {% if perms.app.add_agregar %}
+  {% if perms.core.add_articulo %}
   <a href="{% url 'agregar' %}" class="btn btn-primary">agregar</a> 
   {% endif %}
-  {% if perms.app.view_agregar %}
+  {% if perms.core.view_articulo %}
   <a href="{% url 'listar' %}" class="btn btn-primary">Ver lista</a> 
   {% endif %}
 </div>

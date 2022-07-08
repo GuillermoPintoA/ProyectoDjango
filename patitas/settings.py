@@ -46,6 +46,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
     'django.contrib.staticfiles',
     'core',
     'articulos',
@@ -53,11 +57,12 @@ INSTALLED_APPS = [
     'django.contrib.humanize',
     'crispy_forms',
     'social_django',
-    "colorfield",
-
-    
+    'colorfield',  
+    'allauth.socialaccount.providers.google', 
     
 ]
+SITE_ID = 1
+
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
 CRISPY_TEMPLATE_PACK= 'bootstrap4'
@@ -144,6 +149,9 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 AUTHENTICATION_BACKENDS = [
     'social_core.backends.facebook.FacebookOAuth2',
     'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.ModelBackend',
+    'allauth.account.auth_backends.AuthenticationBackend',
+
 ]
 
 # Default primary key field type
