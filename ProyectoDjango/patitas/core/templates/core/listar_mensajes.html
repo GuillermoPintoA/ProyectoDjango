@@ -1,0 +1,63 @@
+
+{%extends 'core/base.html'%}
+{%block contenido%}
+
+{% load static %}
+{%block css%}
+
+{%endblock%}
+<body>
+{%load humanize%}
+<br><br>
+<div class="card">
+  <div class="card-body">
+<h2 class="d-flex justify-content-center">Productos</h2>
+<hr>
+<div class="product ">
+  <table class="table table-striped table-hover table-responsive">
+    <thead>
+        <tr>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Apellido</th>
+                      <th scope="col">Correo</th>
+                      <th scope="col">Motivo</th>
+                      {% if perms.core.view_articulo %}
+                      <th scope="col">Opciones</th>
+                      {% endif %}
+                      <th scope="col"></th>
+                      
+                  </tr>                   
+                  <tr>
+          
+              {% for men in entity %}
+            <tr>
+                    <td>{{men.nombre|capfirst}}</td>
+                    <td>{{men.apellido|capfirst}}</td>
+                    <td>{{men.correo|capfirst}}</td>
+                    <td>{{men.motivo|capfirst}}</td>
+
+                        {% if perms.core.delete_articulo %}
+                        <td><a href="{%url 'eliminar' men.correo %}" class="btn btn-danger btn-sm">Borrar</a></td>
+                        {% endif %}
+                    </tr>
+            
+                    
+            
+                  </div></div> </div>
+                                      {% endfor %}
+                                            
+                                    </table>      
+                                    <div>
+                                        {% include 'core/Funciones/paginator.html' %}
+                                      </div>
+                                
+             
+              </div>
+            
+                        
+            
+            </p>
+            </div></div>
+            </body>
+            {%endblock%}
+            
